@@ -12,6 +12,7 @@ export class EmployeeManagmentComponent implements OnInit {
   constructor(private sharedadmin:AdminsahredservicesService) { }
   showempDiv:boolean=false;
   addempDiv:boolean=false;
+  updateDiv:boolean=false;
   Employee= new EmployeeDetails();
   
   emparray:EmployeeDetails[];
@@ -22,9 +23,22 @@ export class EmployeeManagmentComponent implements OnInit {
     employeeContact:'',
     employeeAadharNo:null,
     employeePanNo:'',
-    employeeSalary:null
-    
+    employeeSalary:null,
+    login: {
+      loginUserName: '',
+      loginPassword: '',
+      status: '',
+      role: null
+    },
+    address: {
+      addressVillage: '',
+      addressTalName: '',
+      addressDistName: '',
+      addressStateName: '',
+      addressCountryName: '',
+      addressZiPcode:null
   }
+}
   ngOnInit() {
   }
 
@@ -40,14 +54,15 @@ export class EmployeeManagmentComponent implements OnInit {
     
     this.addempDiv=true;
     this.showempDiv=false;
-    this.sharedadmin.addemp(ss).subscribe();
+    return this.sharedadmin.addemp(this.ss).subscribe(result=>{});
   }
-  addemployee()
+  addemployee(ss)
   {
     this.addempDiv=true;
     this.showempDiv=false;
+    // console.log(ss);
     
-    return this.sharedadmin.getEmpData().subscribe(result=>{this.emparray=result });
+    
   }
   
 

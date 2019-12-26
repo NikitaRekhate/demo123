@@ -4,6 +4,7 @@
     <nav>
     <button (click)="addemp()">Add Employee</button>
     <button (click)="showEmployee()">Show EmployeeList</button>
+    
 </nav>
 <div *ngIf="showempDiv"> 
     <h4>Employee Details</h4>
@@ -46,9 +47,10 @@
     </table>
  
 </div>
-<div *ngIf="addempDiv">
-  added
+<!-- <div *ngIf="addempDiv">
   
+  <pre>
+    <br>
 First name:<input type="text" name="employeeFirstName" [(ngModel)]="ss.employeeFirstName" [ngModelOptions]="{ standalone: true }"/><br>
 Last name:<input type="text" name="employeeLastName" [(ngModel)]="ss.employeeLastName" [ngModelOptions]="{ standalone: true }"/><br>
 Email Id:<input type="text" name="employeeEmailId" [(ngModel)]="ss.employeeEmailId" [ngModelOptions]="{ standalone: true }"/><br>
@@ -57,7 +59,172 @@ Aadhar no:<input type="text" name="employeeAadharNo" [(ngModel)]="ss.employeeAad
 Pan no:<input type="text" name="employeeAadharNo" [(ngModel)]="ss.employeeAadharNo" [ngModelOptions]="{ standalone: true }"/><br>
 Salary:<input type="text" name="employeeSalary" [(ngModel)]="ss.employeeSalary" [ngModelOptions]="{ standalone: true }"/><br>
 <button (click)="addemp(ss)">Submit</button>
-  
+  </pre>
     
       
-</div>
+</div> -->
+
+<div *ngIf="addempDiv"> 
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container bootstrap snippets">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+      <form class="form-horizontal">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Add Employee Detailes</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group"> 
+              <label class="col-sm-2 control-label">EmpId</label>
+              
+              <div class="col-sm-10">
+                <input type="hidden" class="form-control" [(ngModel)]="ss.employeeId" [ngModelOptions]="{ standalone: true }">
+              </div>        
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">employeeFirstName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"[(ngModel)]="ss.employeeFirstName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label class="col-sm-2 control-label">employeeLastName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"[(ngModel)]="ss.employeeLastName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label class="col-sm-2 control-label"> employeeEmailId</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control"[(ngModel)]="ss.employeeEmailId" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label"> employeeContact</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="ss.employeeContact" [ngModelOptions]="{ standalone: true }">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">employeePanNo </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="ss.employeePanNo"[ngModelOptions]="{ standalone: true }">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">employeeAadharNo </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="ss.employeeAadharNo" [ngModelOptions]="{ standalone: true }">
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <label class="col-sm-2 control-label">employeeSalary</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="ss.employeeSalary" [ngModelOptions]="{ standalone: true }">
+          </div>
+        </div>
+  
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">Addrerss Info</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">EmployeeaddressId</label>
+              <div class="col-sm-10">
+                <input type="hidden" class="form-control" [(ngModel)]="ss.address.addressId" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"></label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressVillage" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Employee addressTalName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressTalName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"> Employee addressDistName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressDistName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"> Employee addressStateName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressStateName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"> Employee addressCountryName</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressCountryName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"> EMployee addressZipCode</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.address.addressZiPcode" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+          </div>      
+  
+        <div class="panel panel-default">
+          <div class="panel-heading">
+          <h4 class="panel-title">SecurityDetailes</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">UserId</label>
+              <div class="col-sm-10">
+                <input type="hidden" class="form-control" [(ngModel)]="ss.login.loginId" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Username</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.login.loginUserName" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.login.loginPassword" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Role</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.login.status" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Status</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="ss.login.status" [ngModelOptions]="{ standalone: true }">
+              </div>
+            </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" (click)="addemp(ss)">UPDATE</button>
+                <button type="reset" class="btn btn-default">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>

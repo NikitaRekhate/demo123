@@ -16,9 +16,23 @@ export class AdminsahredservicesService {
     employeeContact:'',
     employeeAadharNo:null,
     employeePanNo:'',
-    employeeSalary:null
-
+    employeeSalary:null,
+    login: {
+      loginUserName: '',
+      loginPassword: '',
+      status: '',
+      role: null},
+      address: {
+        addressVillage: '',
+        addressTalName: '',
+        addressDistName: '',
+        addressStateName: '',
+        addressCountryName: '',
+        addressZiPcode:null
+    }
   }
+  
+  
 
   log:Login={
     loginUserName: '',
@@ -27,12 +41,15 @@ export class AdminsahredservicesService {
       role: null
   }
 
+
+
   constructor(private http:HttpClient) { }
   
   url="http://localhost:8082/admin/add";
   url1="http://localhost:8082/admin";
   urll="http://localhost:8082/login/log";
   url2="http://localhost:8082/employee/saveEmp";
+  //url3="http://localhost:8082/employee/saveEmp"
   addAdmin(adm)
   {
 
@@ -57,15 +74,21 @@ export class AdminsahredservicesService {
    
 
   }
-  addemp(ss)
+  addemp(eesss)
    {
+     console.log(eesss);
 // return this.http.post<EmployeeDetails>(this.url2+"/employee"+"/"+"saveEmp",ss);
-return this.http.post<EmployeeDetails>(this.url2+'/',ss);
+return this.http.post<number>(this.url2+'/',eesss);
 
   }
+  
 
   getEmpData()
   {
     return this.http.get<EmployeeDetails[]>(this.url1+'/getEmp');
+  }
+  updateEmployee(up)
+  {
+  //  return this.http.post<EmployeeDetails>(this.url3+'/',up)
   }
 }
